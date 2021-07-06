@@ -1,6 +1,9 @@
 import itertools
-'''
+# itertools used for creating iterable sequence FROM interable element
+
+'''----------------------
 Understanding itertool.groupby()
+-------------------------
 
 iterable passed into groupby() will automatically grouped into nearst neighbors
 '1223' --> groups: 1, 222, 3
@@ -23,3 +26,12 @@ group: ['2']
 digit:  a 
 group: ['a', 'a', 'a']
 '''
+
+
+'''----------------------
+islice(iterable, (start), stop, (step))
+----------------------'''
+
+myList = [1, 2, 3, 4, 5, 6]
+for i in itertools.islice(myList, None, 5, 2):
+    print(i)
