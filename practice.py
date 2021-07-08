@@ -33,3 +33,37 @@ two ways to COMPREHEND a list
 print([x+2 for x in aList])
 # print(list(map(x+2, aList))) --> x is undefined ERROR
 print(list(map(lambda x: x+2, aList)))
+
+
+'''----------------------
+zip() function
+----------------------'''
+a = ("John", "Charles", "Mike")
+
+x = zip(*a)
+
+for index, letter in enumerate(x):
+    print(index, letter)
+''' returns
+0 ('J', 'C', 'M')
+1 ('o', 'h', 'i')
+2 ('h', 'a', 'k')
+3 ('n', 'r', 'e')
+
+
+----------------------
+why *asterisk? 
+----------------------
+'''
+x = zip(a)
+x = zip("John", "Charles", "Mike")
+# returns two different things.
+'''
+('John',)           ('J', 'C', 'M')
+('Charles',)  or    ('o', 'h', 'i')
+('Mike',)           ('h', 'a', 'k')
+                    ('n', 'r', 'e')
+
+and we want the latter to compare each of the characters, 
+thus use * to "unpack" the list when passing to the zip function
+'''
