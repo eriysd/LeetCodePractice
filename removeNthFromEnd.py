@@ -1,8 +1,14 @@
 # https://leetcode.com/explore/interview/card/top-interview-questions-easy/93/linked-list/603/
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
 
 
 def removeNthFromEnd(head, n):
@@ -18,8 +24,11 @@ def removeNthFromEnd(head, n):
     return head
 
 
-head = ListNode()
-head.next = ListNode(1)
+myList = LinkedList()
+myList.head = Node(1)
+myList.head.next = Node(2)
+myList.head.next.next = Node(3)
+myList.head.next.next.next = Node(4)
+myList.head.next.next.next.next = Node(5)
 
-
-print(removeNthFromEnd(, 2))
+print(removeNthFromEnd(myList.head, 2))
