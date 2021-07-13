@@ -33,6 +33,18 @@ def reverseList(head: ListNode) -> ListNode:
         cur.next, prev, cur = prev, cur, cur.next
     return prev
 
+
+def reverseList1(head: ListNode) -> ListNode:
+    prev = None
+
+    while head:
+        front = head
+        head = head.next
+        front.next = prev
+        prev = front
+    return prev
+
+
 # ---------
 # Solution 2
 # recursion version with the same operation
@@ -49,6 +61,16 @@ def _reverse(self, node, prev=None):
     n = node.next
     node.next = prev
     return self._reverse(n, node)
+
+
+def reverse(self, head, prev=None):
+    if not head:
+        return prev
+
+    front = head
+    head = head.next
+    front.next = prev
+    return self.reverse(head, front)
 
 
 '''---------
